@@ -25,7 +25,10 @@ Partial Class MainForm
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.文件FToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.导入EXCEL数据文件ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.设置文件输出位置ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.退出XToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.输出结果ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.输出3DEC网格文件ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.输出3DEC控制命令ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -37,9 +40,7 @@ Partial Class MainForm
         Me.注册产品ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.检查更新ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.关于我们ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.退出XToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -66,11 +67,28 @@ Partial Class MainForm
         Me.导入EXCEL数据文件ToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
         Me.导入EXCEL数据文件ToolStripMenuItem.Text = "新建EXCEL数据文件（N）"
         '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(218, 22)
+        Me.ToolStripMenuItem1.Text = "导入EXCEL数据文件（D）"
+        '
         '设置文件输出位置ToolStripMenuItem
         '
         Me.设置文件输出位置ToolStripMenuItem.Name = "设置文件输出位置ToolStripMenuItem"
         Me.设置文件输出位置ToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
         Me.设置文件输出位置ToolStripMenuItem.Text = "设置文件输出位置（S）"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(215, 6)
+        '
+        '退出XToolStripMenuItem
+        '
+        Me.退出XToolStripMenuItem.Name = "退出XToolStripMenuItem"
+        Me.退出XToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
+        Me.退出XToolStripMenuItem.Text = "退出（X）"
         '
         '输出结果ToolStripMenuItem
         '
@@ -140,22 +158,9 @@ Partial Class MainForm
         Me.关于我们ToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
         Me.关于我们ToolStripMenuItem.Text = "关于我们（A）"
         '
-        'ToolStripSeparator1
+        'OpenFileDialog1
         '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(214, 6)
-        '
-        '退出XToolStripMenuItem
-        '
-        Me.退出XToolStripMenuItem.Name = "退出XToolStripMenuItem"
-        Me.退出XToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
-        Me.退出XToolStripMenuItem.Text = "退出（X）"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(218, 22)
-        Me.ToolStripMenuItem1.Text = "导入EXCEL数据文件（D）"
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'MainForm
         '
@@ -191,4 +196,5 @@ Partial Class MainForm
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents 退出XToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class
