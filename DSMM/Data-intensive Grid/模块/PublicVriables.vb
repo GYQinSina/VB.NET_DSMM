@@ -8,9 +8,10 @@ Module PublicVriables
     Public Mining_L, Disco_L, Spec_ID As Integer
     Public start_no, ii As Integer
     Public ZCS, D1C, h_no, r_no, E_no, GJC_no, R1_no As Integer
-    Public R1, R2 As Integer
+
     'double
     Public delt_h As Double
+    Public R1, R2 As Double
     'excel workbook worksheet
     Public objExcel As New Excel.Application
     Public objWorkbook As Excel.Workbook
@@ -37,12 +38,8 @@ Module PublicVriables
         StartLine_no = 3 '数据开始行号
         CodeStartLine_no = 3 '代码 Block 1 开始行号
         G_i = 1
-        '初始化excel
-        TemplatePath = My.Application.Info.DirectoryPath & "\Template.xlsx"
-        objWorkbook = objExcel.Workbooks.Add(TemplatePath)
-        Sheet6 = objWorkbook.Sheets("Sheet6")
-        Sheet6.Cells(1, 1) = "Success!"
-        objExcel.Visible = True
+        '------------------------------关键层初始化--------------------------------------
+        R1 = R2 = 1
     End Sub
 
 End Module

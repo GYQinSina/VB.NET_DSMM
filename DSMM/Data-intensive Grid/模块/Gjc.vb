@@ -18,7 +18,7 @@
                 Sheet3.Cells(D1C - k + 1 - i, GJC_no) = "关键层"
                 Sheet3.Cells(D1C - k + 1 - i, GJC_no + 1) = k + i
                 Sheet3.Cells(D1C + 1 - zjr, GJC_no + 2) = Qab(i, zjr)
-                Sheet3.Cells(D1C + 1 - zjr, GJC_no + 3) = Sheet3.Cells(D1C + 1 - zjr, h_no) * Math.Sqrt(2 * Sheet3.Cells(D1C + 1 - zjr, R1_no) / Qab(i, zjr))
+                Sheet3.Cells(D1C + 1 - zjr, GJC_no + 3) = Sheet3.Cells(D1C + 1 - zjr, h_no).value * Math.Sqrt(2 * Sheet3.Cells(D1C + 1 - zjr, R1_no).value / Qab(i, zjr))
                 zjr = k + i
                 k = k + i
                 i = 1
@@ -28,23 +28,24 @@
             End If
             If i > ZCS - k Then
                 Sheet3.Cells(D1C + 1 - k, GJC_no + 2) = Qab(i - 1, k)
-                Sheet3.Cells(D1C + 1 - k, GJC_no + 3) = Sheet3.Cells(D1C + 1 - k, h_no) * Math.Sqrt(2 * Sheet3.Cells(D1C + 1 - k, R1_no) / Qab(i - 1, k))
+                Sheet3.Cells(D1C + 1 - k, GJC_no + 3) = Sheet3.Cells(D1C + 1 - k, h_no).value * Math.Sqrt(2 * Sheet3.Cells(D1C + 1 - k, R1_no).value / Qab(i - 1, k))
                 k = ZCS - 1
             End If
+            'MsgBox("一个Loop")
         Loop
     End Sub
     Function FZab(a, b) 'b层位之上第a层对第b层的荷载（分子计算）a=1指示第b层本身
         R2 = 0
         For i = 1 To a
-            R1 = Sheet3.Cells(D1C + 1 - b + 1 - i, h_no) * Sheet3.Cells(D1C + 1 - b + 1 - i, r_no)
+            R1 = Sheet3.Cells(D1C + 1 - b + 1 - i, h_no).value * Sheet3.Cells(D1C + 1 - b + 1 - i, r_no).value
             R2 = R1 + R2
         Next i
-        FZab = Sheet3.Cells(D1C + 1 - b, E_no) * Sheet3.Cells(D1C + 1 - b, h_no) ^ 3 * R2
+        FZab = Sheet3.Cells(D1C + 1 - b, E_no).value * Sheet3.Cells(D1C + 1 - b, h_no).value ^ 3 * R2
     End Function
     Function FMab(a, b) 'b层位之上第a层对第b层的荷载（分母计算）a=1指示第b层本身
         R2 = 0
         For i = 1 To a
-            R1 = Sheet3.Cells(D1C + 1 - b + 1 - i, E_no) * Sheet3.Cells(D1C + 1 - b + 1 - i, h_no) ^ 3
+            R1 = Sheet3.Cells(D1C + 1 - b + 1 - i, E_no).value * Sheet3.Cells(D1C + 1 - b + 1 - i, h_no).value ^ 3
             R2 = R1 + R2
         Next i
         FMab = R2
