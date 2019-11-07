@@ -1,5 +1,7 @@
 ﻿Module Gjc
     Sub D_GJC()
+
+
         ZCS = 32 '总层数  煤层顶板到表土层32 38 38 17
         D1C = 34 '第一层顶板的行数34 79 123 146
         h_no = 3 '厚度列号
@@ -9,10 +11,13 @@
         GJC_no = 7 '关键层标记列号
         '------------------------------确定关键层-------------------------
         Dim k, i, zjr As Integer
-
+        Dim BarMinVal, BarMaxVal, InterVal As Double
         k = 1
         i = 1
         zjr = 1 '中间人，中转变量
+        BarMinVal = MainForm.ToolStripProgressBar1.Minimum
+        BarMaxVal = MainForm.ToolStripProgressBar1.Maximum
+        InterVal = (BarMaxVal - BarMinVal) / (ZCS - 1)
         Do While k < ZCS - 1
             If Qab(i, k) > Qab(i + 1, k) Then
                 Sheet3.Cells(D1C - k + 1 - i, GJC_no) = "关键层"
@@ -32,6 +37,7 @@
                 k = ZCS - 1
             End If
             'MsgBox("一个Loop")
+            MainForm.ToolStripProgressBar1.Value = BarMinVal + k * InterVal
         Loop
     End Sub
     Function FZab(a, b) 'b层位之上第a层对第b层的荷载（分子计算）a=1指示第b层本身

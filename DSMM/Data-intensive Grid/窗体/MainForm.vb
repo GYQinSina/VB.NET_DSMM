@@ -57,4 +57,8 @@ Public Class MainForm
         Call IniPubVars()
         Call D_GJC()
     End Sub
+
+    Private Sub ToolStripProgressBar1_Click(sender As Object, e As EventArgs) Handles ToolStripProgressBar1.Click
+        ToolStripProgressBar1.Value = 10
+    End Sub
 End Class
