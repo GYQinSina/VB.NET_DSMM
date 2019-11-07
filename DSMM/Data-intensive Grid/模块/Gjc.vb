@@ -1,7 +1,5 @@
 ﻿Module Gjc
     Sub D_GJC()
-
-
         ZCS = 32 '总层数  煤层顶板到表土层32 38 38 17
         D1C = 34 '第一层顶板的行数34 79 123 146
         h_no = 3 '厚度列号
@@ -59,5 +57,19 @@
     Function Qab(a, b)
         Qab = FZab(a, b) / FMab(a, b)
     End Function
+
+    Sub a()
+        Dim A1, A2, A3 As Integer
+        Dim ds As New DataSet1
+        Dim dt As DataSet1.GYQDataTable
+
+        dt = ds.Tables("GYQ")
+        A1 = A2 = A3 = dt.Rows(1).Item(1) + dt.Rows(1).Item(1)
+
+        Dim B1 As New ADOX.Column
+
+
+    End Sub
+
 
 End Module
